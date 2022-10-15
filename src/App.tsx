@@ -8,8 +8,7 @@ import lodash from 'lodash'
 function App() {
   const [data, setData] = useState("")
   const [count, setCount] = useState(0)
-  const [format, setFormat] = useState<"raw" | "json">("raw")
-  const [loading, setLoading] = useState(false)
+  const [format] = useState<"raw" | "json">("raw")
   const [url, setUrl] = useState(null)
 
   const formatDownloadUrl = () => {
