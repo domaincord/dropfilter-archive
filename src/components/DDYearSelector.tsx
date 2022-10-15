@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import moment from 'moment'
 
-const years = [
-    "2020",
-    "2021",
-    "2022",
-];
-
 const DDYearSelector = () => {
   const [years, setYears] = useState([])
   const [year, setYear] = useState(years[years.length - 1])
