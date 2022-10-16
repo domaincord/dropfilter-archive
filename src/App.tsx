@@ -55,7 +55,7 @@ function App() {
         }
       })
       .catch(error => {
-        console.log(error)
+        setData("No domains found. Try a different date.")
       })
   }
 
@@ -71,7 +71,16 @@ function App() {
       <SelectorBar />
       <div className="relative flex place-content-center items-center" style={{height: `calc(100vh - 240px)`}}>
         <textarea readOnly name="output" id="output" className="w-full h-full border-none" value={data}></textarea>
-        <div className="absolute top-2 right-6 text-black bg-slate-300 p-3 rounded-lg text-sm">{numberWithCommas(count)} domains</div>
+        <div className="absolute top-2 right-6 flex flex-end justify-between items-center">
+          { url && count ? (
+            <a href={url} target={`_blank`} className="text-black bg-blue-300 hover:bg-blue-400 p-3 rounded-lg text-sm mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </a>
+          ) : null }
+          { count ? <div className="text-black bg-slate-300 p-3 rounded-lg text-sm">{numberWithCommas(count)} domains</div> : null }
+        </div>
       </div>
     </>
   );
