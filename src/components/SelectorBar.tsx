@@ -8,12 +8,16 @@ const SelectorBar = () => {
 
 
     return (
-        <header className="bg-blue-500 w-full h-24">
-            <div className="container mx-auto px-6 flex flex-row place-content-center items-center h-full">
-                <BackorderServiceSelector />
-                <DDYearSelector />
-                <DDMonthSelector />
-                <DDDaySelector />
+        <header className="bg-blue-500 w-full h-48 lg:h-24">
+            <div className="px-6 flex flex-col lg:flex-row justify-around lg:justify-center items-center h-full">
+                <div className="lg:flex-grow">
+                    <BackorderServiceSelector />
+                </div>
+                <div className="flex flex-row flex-nowrap">
+                    <DDYearSelector />
+                    <DDMonthSelector />
+                    <DDDaySelector />
+                </div>
             </div>
         </header>
     )

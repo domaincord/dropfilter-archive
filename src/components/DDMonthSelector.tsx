@@ -58,7 +58,6 @@ const DDMonthSelector = () => {
 
     if (yValue && mValue) {
       getMonthsList(yValue, mValue)
-      return
     }
 
     if (mValue) {
